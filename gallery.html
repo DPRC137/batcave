@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Batcave</title>
+  <title>Batcave Gallery</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
@@ -17,21 +17,24 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<header class="hero d-flex align-items-center text-center text-white">
+<section class="py-5">
   <div class="container">
-    <h1 class="display-4 fw-bold">Welcome to the Batcave</h1>
-    <p class="lead">A modern hideout filled with cutting-edge technology.</p>
-    <a href="gallery.html" class="btn btn-primary btn-lg">Explore the Gallery</a>
+    <h1 class="fw-bold mb-4 text-center">Gallery</h1>
+    <div class="row g-4">
+      <div class="col-md-4"><img src="https://source.unsplash.com/featured/?batcave" class="img-fluid rounded" alt="Batcave concept"></div>
+      <div class="col-md-4"><img src="https://source.unsplash.com/featured/?underground,technology" class="img-fluid rounded" alt="Tech lair"></div>
+      <div class="col-md-4"><img src="https://source.unsplash.com/featured/?futuristic,cave" class="img-fluid rounded" alt="Futuristic cave"></div>
+    </div>
   </div>
-</header>
+</section>
 
 <footer class="bg-dark text-white text-center py-3">
   &copy; 2025 The Batcave. All rights reserved.

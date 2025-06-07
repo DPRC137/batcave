@@ -1,0 +1,7 @@
+body { font-family: 'Roboto', sans-serif; }
+.hero {
+  background-image: url('https://source.unsplash.com/featured/?dark,cave');
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+}
