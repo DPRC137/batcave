@@ -1,5 +1,5 @@
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Mono', monospace;
   background-color: black;
   color: #00ff00;
   margin: 0;
@@ -7,11 +7,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1.1rem;
 }
 
 #terminal {
-  width: 80%;
-  max-width: 800px;
+  width: 90%;
+  max-width: 1000px;
   background-color: black;
   padding: 1rem;
   border: 1px solid #00ff00;
@@ -19,10 +20,16 @@ body {
   height: 80vh;
 }
 
+#ascii-art {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
 #output {
   white-space: pre-wrap;
   overflow-y: auto;
   margin-bottom: 1rem;
+  font-size: 1.1rem;
 }
 
 #input-line {
@@ -31,6 +38,7 @@ body {
 
 .prompt {
   margin-right: 0.5rem;
+  font-weight: bold;
 }
 
 #command-input {
@@ -39,6 +47,7 @@ body {
   color: #00ff00;
   flex: 1;
   outline: none;
+  font-size: 1.1rem;
 }
 .suggestion {
   color: #0ff;

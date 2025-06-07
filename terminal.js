@@ -1,5 +1,15 @@
 const output = document.getElementById('output');
 const input = document.getElementById('command-input');
+const art = document.getElementById('ascii-art');
+
+const batAscii = `
+   _==_                     
+ _(    )_  __ BatLine __    
+/        \  Ask Batman      
+ \      /                   
+  \____/                    
+`;
+art.textContent = batAscii;
 
 const commandInfo = {
   help: { description: 'List commands or details about one', recommend: 'intel && suspects' },
@@ -11,10 +21,43 @@ const commandInfo = {
   date: { description: 'Display system date' },
   whoami: { description: 'Identify the current user' },
   about: { description: 'Open information page' },
-  gallery: { description: 'Open gallery page' }
+  gallery: { description: 'Open gallery page' },
+  ask: { description: 'Ask Batman a question' }
 };
 
 const commandList = Object.keys(commandInfo);
+
+async function askBatman(question) {
+  if (!window.OPENAI_API_KEY) {
+    appendOutput('OpenAI API key not set.');
+    return;
+  }
+  appendOutput('Consulting the Batcomputer...');
+  try {
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${window.OPENAI_API_KEY}`
+      },
+      body: JSON.stringify({
+        model: 'gpt-3.5-turbo',
+        messages: [
+          { role: 'system', content: 'You are Batman from DC Comics. Reply in short, gritty sentences and never break character.' },
+          { role: 'user', content: question }
+        ]
+      })
+    });
+    const data = await response.json();
+    if (data.choices && data.choices[0]) {
+      appendOutput(data.choices[0].message.content.trim());
+    } else {
+      appendOutput('No response from Batcomputer.');
+    }
+  } catch (e) {
+    appendOutput('Error contacting Batcomputer.');
+  }
+}
 
 function appendOutput(text) {
   const line = document.createElement('div');
@@ -36,7 +79,7 @@ function clearOutput() {
 }
 
 function runSingleCommand(cmd) {
-  appendOutput(`batcave$ ${cmd}`);
+  appendOutput(`batline$ ${cmd}`);
   const args = cmd.split(/\s+/);
   const base = args[0];
 
@@ -78,10 +121,13 @@ function runSingleCommand(cmd) {
     case 'gallery':
       window.location.href = 'gallery.html';
       break;
+    case 'ask':
+      askBatman(args.slice(1).join(' '));
+      break;
     case '':
       break;
     default:
-      appendOutput(`Command not recognized: ${cmd}`);
+      askBatman(cmd);
       return;
   }
 
@@ -115,6 +161,6 @@ input.addEventListener('keydown', (event) => {
 
 // Intro message
 appendOutput('Initializing WayneTech OS 7.4...');
-appendOutput('Access granted. Welcome back, Batman.');
-appendOutput("Type 'help' to begin your investigation.");
+appendOutput('Access granted. Batman here.');
+appendOutput("Type 'help' for commands or just ask me.");
 input.focus();
