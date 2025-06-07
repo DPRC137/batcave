@@ -63,6 +63,21 @@
       white-space: pre-wrap;
       margin-bottom: 1rem;
       font-size: 1.2rem;
+      scrollbar-width: thin;
+      scrollbar-color: #f1c40f #000;
+    }
+
+    #output::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    #output::-webkit-scrollbar-thumb {
+      background: #f1c40f;
+      border-radius: 4px;
+    }
+
+    #output::-webkit-scrollbar-track {
+      background: #000;
     }
 
     #input-line {
@@ -95,7 +110,7 @@
       <img src="logo.png" alt="Bat Symbol" />
       <div class="subtitle">=== BAT HOTLINE – ONLINE ===</div>
     </div>
-    
+
     <div id="output"></div>
     <div id="input-line">
       <span class="prompt">hotline$</span>
@@ -169,7 +184,7 @@
             dialed = true;
             input.disabled = true;
             dialSound.currentTime = 0;
-dialSound.play().catch(e => console.warn('Autoplay blocked:', e));
+            dialSound.play().catch(e => console.warn('Autoplay blocked:', e));
             appendOutput('Establishing secure connection...');
             setTimeout(() => {
               appendOutput('Connection complete. Batman here.');
