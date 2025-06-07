@@ -18,11 +18,25 @@ body {
   background-color: #000;
 }
 
-#ascii-art {
+#logo-container {
   text-align: center;
   margin-bottom: 2rem;
-  font-size: 3rem;
 }
+
+#logo-container img {
+  width: 200px;
+  max-width: 80%;
+  image-rendering: crisp-edges;
+  filter: drop-shadow(0 0 8px #f1c40f);
+}
+
+.subtitle {
+  color: #f1c40f;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+
 
 #output {
   white-space: pre-wrap;
