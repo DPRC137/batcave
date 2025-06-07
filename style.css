@@ -40,3 +40,7 @@ body {
   flex: 1;
   outline: none;
 }
+.suggestion {
+  color: #0ff;
+  font-style: italic;
+}
