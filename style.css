@@ -1,7 +1,46 @@
-body { font-family: 'Roboto', sans-serif; }
-.hero {
-  background-image: url('https://source.unsplash.com/featured/?dark,cave');
-  background-size: cover;
-  background-position: center;
-  height: 60vh;
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: black;
+  color: #00ff00;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#terminal {
+  width: 80%;
+  max-width: 800px;
+  background-color: black;
+  padding: 1rem;
+  border: 1px solid #00ff00;
+  overflow-y: auto;
+  height: 80vh;
+}
+
+#output {
+  white-space: pre-wrap;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+#input-line {
+  display: flex;
+}
+
+.prompt {
+  margin-right: 0.5rem;
+}
+
+#command-input {
+  background: transparent;
+  border: none;
+  color: #00ff00;
+  flex: 1;
+  outline: none;
+}
+.suggestion {
+  color: #0ff;
+  font-style: italic;
 }

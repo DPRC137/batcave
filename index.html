@@ -3,40 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Batcave</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Batcave Terminal</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-  <link href="style.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="index.html">Batcave</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-      </ul>
+  <p style="color:#00ff00; text-align:center;">Use Tab for autocomplete and chain commands with <code>&&</code> or <code>;</code>.</p>
+  <div id="terminal">
+    <div id="output"></div>
+    <div id="input-line">
+      <span class="prompt">batcave$</span>
+      <input type="text" id="command-input" autocomplete="off" />
     </div>
   </div>
-</nav>
 
-<header class="hero d-flex align-items-center text-center text-white">
-  <div class="container">
-    <h1 class="display-4 fw-bold">Welcome to the Batcave</h1>
-    <p class="lead">A modern hideout filled with cutting-edge technology.</p>
-    <a href="gallery.html" class="btn btn-primary btn-lg">Explore the Gallery</a>
-  </div>
-</header>
-
-<footer class="bg-dark text-white text-center py-3">
-  &copy; 2025 The Batcave. All rights reserved.
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="terminal.js"></script>
 </body>
 </html>
