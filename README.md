@@ -1,5 +1,7 @@
-# Batcave Website
+# Batcave Terminal
 
-This repository contains a simple multi-page website that re-imagines what a modern Batcave could look like. The pages are styled with Bootstrap and include photos sourced from Unsplash.
+This project provides a browser-based terminal inspired by Batman's Batcave.
+Open `index.html` in a modern browser to interact with the command line interface.
+Type `help` to see the available commands and follow the narrative as you investigate Gotham City.
 
-Open `index.html` in a browser to explore the site.
+All previous images have been removed to maintain operational secrecy.
